@@ -1,0 +1,128 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+dist/
+build/
+eggs/
+*.egg-info/
+*.egg
+
+# Python installer metadata
+*.egg-info
+.Python
+env/
+venv/
+*.env
+
+# Server-specific
+*.pyc
+.env
+
+# Development environments
+.env
+
+# Django local settings
+local_settings.py
+
+# Virtual environments
+env/
+venv/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# macOS system files
+.DS_Store
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# SQLite database
+db.sqlite3
+
+# Media and static files
+media/
+static/
+
+# Compiled files
+*.pyc
+
+# Testing
+.coverage
+.coverage.*
+.cache
+
+# Python profiling files
+.prof
+
+# PyInstaller
+dist/
+build/
+*.spec
+
+# Pipenv
+.Pipfile
+.Pipfile.lock
+
+# Poetry
+.poetry.lock
+
+# IPython
+.ipynb_checkpoints
+
+# Jupyter Notebook
+*.ipynb
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# macOS folder attributes
+.AppleDouble
+.DS_Store
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Jupyter Notebook temporary files
+.ipynb_checkpoints/
