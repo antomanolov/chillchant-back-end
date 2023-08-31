@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method='post'>
+        
+        {% for field in form  %}
+        <p>{{field.errors}}</p>
+        <p>{{field.label}}</p>
+        <p>{{field}}</p>
+        {% endfor %}
+        <button>Post</button>
+        {% csrf_token %}
+    </form>
+    
+</body>
+</html>

@@ -11,7 +11,7 @@ class CreateUserView(CreateView):
     model = AppUser
     template_name = 'accounts/create_user.html'
     form_class = CustomCreationFrom
-    success_url = 'accounts/create_user.html'
+    success_url = 'index page'
 
 class SignUpView(LoginView):
     template_name = 'accounts/login.html'    

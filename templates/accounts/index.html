@@ -8,5 +8,13 @@
 <body>
     <h1>{{request.user}}</h1>
     <a href="{% url 'details page' request.user.pk %}">Details Logged User</a>
+    <div>
+        <a href="">Make a post</a>
+    </div>
+    {% for post in request.user.post_set.all  %}
+        <p>Created on {{post.created_on}}</p>
+        <p>by {{post.to_user.pk}}nd user</p>
+        <p>{{post.text}}</p>
+    {% endfor %}
 </body>
 </html>
