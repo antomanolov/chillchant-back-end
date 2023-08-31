@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView,ListView, DetailView
 from app_profiles.appuser import AppUser
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 
 from app_profiles.forms import CustomCreationFrom
 
@@ -15,6 +15,9 @@ class CreateUserView(CreateView):
 
 class SignUpView(LoginView):
     template_name = 'accounts/login.html'    
+    next_page = reverse_lazy('index page')
+
+class SignOutView(LogoutView):
     next_page = reverse_lazy('index page')
 
 class IndexView(ListView):

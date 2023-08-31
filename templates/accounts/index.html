@@ -6,15 +6,23 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="{% url 'logout page' %}">Logout</a>
+    <a href="{% url 'login page' %}">Login</a>
     <h1>{{request.user}}</h1>
+    {% if request.user.is_authenticated %}
     <a href="{% url 'details page' request.user.pk %}">Details Logged User</a>
-    <div>
-        <a href="">Make a post</a>
+    
+        <a href="{% url 'post create page' %}">Make a post</a>
+    
+    <div style='border: 1px solid blue; width: 650px; margin: 20px 10px;'>
+        {% for post in request.user.post_set.all  %}
+            <p>Created on {{post.created_on}}</p>
+            <p>by {{post.to_user.pk}}nd user</p>
+            <p>{{post.text}}</p>
+            <a href="{% url 'post edit page' post.pk%}" style='padding-right: 40px;'>Edit</a><a href="">Delete</a>
+        {% endfor %}
+
     </div>
-    {% for post in request.user.post_set.all  %}
-        <p>Created on {{post.created_on}}</p>
-        <p>by {{post.to_user.pk}}nd user</p>
-        <p>{{post.text}}</p>
-    {% endfor %}
+    {% endif %}
 </body>
 </html>

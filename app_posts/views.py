@@ -2,7 +2,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from app_posts.forms import CreatePostForm
 
 from app_posts.models import Post
@@ -18,3 +18,14 @@ class CreatePostView(CreateView):
         instance.to_user = self.request.user
         instance.save()
         return super().form_valid(form)
+
+
+class EditPostView(UpdateView):
+    model = Post
+    form_class = CreatePostForm
+    template_name = 'posts/create_post.html'
+    success_url = reverse_lazy('index page')
+
+
+class DeletePostView(DeleteView):
+    ...
