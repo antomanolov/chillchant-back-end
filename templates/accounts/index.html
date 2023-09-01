@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/a5bbb14968.js" crossorigin="anonymous"></script>
 </head>
 <body>
     {% if request.user.is_authenticated %}
@@ -22,10 +23,15 @@
         {% if request.user.post_set %}
             {% for post in request.user.post_set.all  %}
                 <p>Created on {{post.created_on}}</p>
-                <p>by {{post.to_user.pk}}nd user</p>
+                <p>by {{post.to_user.pk}} user</p>
                 <p>{{post.text}}</p>
+                {% if post.image %}
                 <img src="{{post.image.url}}" alt="">
-                
+                {% endif %}
+                <div>
+                    <p>Likes {{post.total_likes}}</p>
+                    <a href="{% url 'like' post.pk%}"><i class="fa-regular fa-heart"></i></a>
+                </div>
                 <a href="{% url 'post edit page' post.pk%}" style='padding-right: 40px;'>Edit</a><a href="{% url 'post delete page' post.pk %}">Delete</a>
             {% endfor %}
         {% else %}

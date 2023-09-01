@@ -37,3 +37,5 @@ class CustomAdmin(UserAdmin):
 
 
 admin.site.register(AppUser, CustomAdmin)
+
+

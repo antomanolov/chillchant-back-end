@@ -17,7 +17,7 @@ class Like(models.Model):
     )
 
     def __str__(self):
-        return f'You\'ve liked this post'
+        return f'You\'ve liked this post {self.pk}'
 
 class Comment(models.Model):
     text = models.TextField()
