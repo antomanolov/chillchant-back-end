@@ -6,8 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="{% url 'logout page' %}">Logout</a>
-    <a href="{% url 'login page' %}">Login</a>
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'logout page' %}">SignOut</a>
+    {% endif %}
+    <a href="{% url 'login page' %}">SignIn</a>
+    <a href="{% url 'create user page' %}">SignUp</a>
+    
     <h1>{{request.user}}</h1>
     {% if request.user.is_authenticated %}
     <a href="{% url 'details page' request.user.pk %}">Details Logged User</a>
@@ -15,12 +19,19 @@
         <a href="{% url 'post create page' %}">Make a post</a>
     
     <div style='border: 1px solid blue; width: 650px; margin: 20px 10px;'>
-        {% for post in request.user.post_set.all  %}
-            <p>Created on {{post.created_on}}</p>
-            <p>by {{post.to_user.pk}}nd user</p>
-            <p>{{post.text}}</p>
-            <a href="{% url 'post edit page' post.pk%}" style='padding-right: 40px;'>Edit</a><a href="">Delete</a>
-        {% endfor %}
+        {% if request.user.post_set %}
+            {% for post in request.user.post_set.all  %}
+                <p>Created on {{post.created_on}}</p>
+                <p>by {{post.to_user.pk}}nd user</p>
+                <p>{{post.text}}</p>
+                <img src="{{post.image.url}}" alt="">
+                
+                <a href="{% url 'post edit page' post.pk%}" style='padding-right: 40px;'>Edit</a><a href="{% url 'post delete page' post.pk %}">Delete</a>
+            {% endfor %}
+        {% else %}
+                <h1>No posts yet</h1>
+        {% endif %}
+        
 
     </div>
     {% endif %}

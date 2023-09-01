@@ -1,9 +1,7 @@
-
-from django.http import HttpResponse
-from django.shortcuts import render
+import os
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView
-from app_posts.forms import CreatePostForm
+from app_posts.forms import CreatePostForm, DeletePostForm
 
 from app_posts.models import Post
 
@@ -28,4 +26,9 @@ class EditPostView(UpdateView):
 
 
 class DeletePostView(DeleteView):
-    ...
+    model = Post
+    form_class = DeletePostForm
+    template_name = 'posts/delete_post.html'
+    success_url = reverse_lazy('index page')
+
+   
