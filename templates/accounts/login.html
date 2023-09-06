@@ -11,14 +11,17 @@
 </head>
 <body>
     <div class="wrapper">
-        <form action="">
+        <form action="" method='post'>
             <h1>Login</h1>
+           
+            
+          
+            {% for field in form  %}
             <div class="input-box">
-                <input type="text" name="" id="" placeholder="Username">
+                {{field}}
             </div>
-            <div class="input-box">
-                <input type="password" name="" id="" placeholder="Enter your password">
-            </div>
+            
+            {% endfor %}
 
             <button class="btn">Login</button>
             <div class="forgot">
@@ -30,6 +33,7 @@
                 <p>Don't have an account? <a href="#">Register now</a></p>
                 
             </div>
+            {% csrf_token %}
         </form>
     </div>
     <footer>

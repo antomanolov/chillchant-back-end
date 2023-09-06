@@ -317,7 +317,7 @@ main .container .left .profile {
     z-index: 2;
 }
 
-.middle .stories .story:nth-child(1) {
+/* .middle .stories .story:nth-child(1) {
     background: url('/imgs/mockups/story/story1.jpg') no-repeat center center/cover;
 }
 
@@ -331,7 +331,7 @@ main .container .left .profile {
 
 .middle .stories .story:nth-child(4) {
     background: url('/imgs/mockups/story/story1.jpg') no-repeat center center/cover;
-}
+} */
 
 
 .middle .story .profile-photo {
