@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
-from app_common.models import Like
+from app_common.forms import CommentForm
+from app_common.models import Comment, Like
 
 from app_posts.models import Post
 
@@ -15,3 +16,4 @@ def like_view(request, pk):
         like = Like.objects.filter(to_user_id=request.user, to_post_id=current_post)
         like.delete()
     return redirect(request.META['HTTP_REFERER'])
+
