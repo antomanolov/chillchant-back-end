@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView,ListView, DetailView
 from app_profiles.appuser import AppUser
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from app_profiles.forms import CustomCreationFrom
 
@@ -22,7 +23,9 @@ class SignOutView(LogoutView):
 
 class IndexView(ListView):
     model = AppUser
-    template_name = 'accounts/index.html'
+    template_name = 'common/index.html'
+    
+    
 
 class UserDetailsView(DetailView):
     model = AppUser

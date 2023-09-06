@@ -1,7 +1,7 @@
 import os
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from app_common.forms import CommentForm
 from app_posts.forms import CreatePostForm, DeletePostForm
 
