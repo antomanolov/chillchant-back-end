@@ -56,6 +56,13 @@ body {
     border-radius: 50%;
     overflow: hidden;
 }
+.logo {
+    margin-top: -1rem;
+}
+
+#logo{
+    cursor: pointer;
+}
 
 img {
     display: block;

@@ -23,9 +23,12 @@
             </div>
             <div class="create">
                 <label for="#create-post" class="btn btn-primary">Create</label>
-                <div class="profile-photo">
-                    <img src="" alt="">
+                <a href='{% url 'logout page' %}'>Logout</a>
+                
+                <div class="profile-photo" id='logo'>
+                    <a href='{% url 'index page' %}'><img src="{% static 'imgs/logo.png' %}" alt=""></a>
                 </div>
+                
             </div>
         </div>
     </nav>
