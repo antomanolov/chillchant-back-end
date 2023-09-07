@@ -1,0 +1,104 @@
+{% load static %}
+<div class="middle">
+    <!-- stories? -->
+    <div class="stories">
+        <div class="story">
+            <div class="profile-photo">
+                <img src="" alt="">
+            </div>
+            <p class="name">
+                {{request.user}}
+            </p>
+        </div>
+        <div class="story">
+            <div class="profile-photo">
+                <img src="" alt="">
+            </div>
+            <p class="name">
+                Jordan Michaelson
+            </p>
+        </div>
+        <div class="story">
+            <div class="profile-photo">
+                <img src="" alt="">
+            </div>
+            <p class="name">
+                Benjamin Rekwood
+            </p>
+        </div>
+        <div class="story">
+            <div class="profile-photo">
+                <img src="" alt="">
+            </div>
+            <p class="name">
+                Marsupilami Popova
+            </p>
+        </div>
+        <div class="story">
+            <div class="profile-photo">
+                <img src="" alt="">
+            </div>
+            <p class="name">
+                Marsupilami Popova
+            </p>
+        </div>
+
+    </div>
+    <!-- end stories -->
+    <!-- create chant -->
+    <form action="" class="create-post">
+        <div class="profile-photo">
+            <img src="" alt="">
+        </div>
+        <input type="text" name="" id="" placeholder="What do you think about*username*?" id="create-post">
+        <input type="submit" value="Chant" class="btn btn-primary">
+    </form>
+
+    <!-- feed part -->
+    <div class="feeds">
+        <div class="feed">
+            <div class="head">
+                <div class="user">
+                    <div class="profile-photo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="info">
+                        <h3>Lana del Romana</h3>
+                        <small>Santo Placindo, 15 HOURS AGO</small>
+                    </div>
+
+                </div>
+                <!-- this will be links in a dropdown menu -->
+                <span class="edit"><i class="fa-solid fa-ellipsis"></i></span>
+            </div>
+
+            <div class="photo">
+                <img src="{% static 'imgs/background-login.jpg' %}" alt="">
+            </div>
+            <!-- this buttons will have interactions -->
+            <div class="action-buttons">
+                <div class="interaction-buttons">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <span><i class="fa-regular fa-comment"></i></span>
+                    <span><i class="fa-regular fa-share-from-square"></i></span>
+                </div>
+                <div class="bookmark">
+                    <span><i class="fa-regular fa-bookmark"></i></span>
+                </div>
+            </div>
+            <div class="liked-by">
+                <span><img src="" alt=""></span>
+                <span><img src="" alt=""></span>
+                <span><img src="" alt=""></span>
+                <p>Liked by <b>Jordan Michaelson</b> and <b>45 others</b></p>
+            </div>
+
+            <div class="caption">
+                <p><b>Lana del Romana</b> <span class="hash-tag">#happy #multicultural #selfie</span></p>
+            </div>
+            <div class="comments text-muted">
+                View all 23 comments
+            </div>
+        </div>
+    </div>
+</div>
