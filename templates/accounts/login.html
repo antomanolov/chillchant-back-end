@@ -1,23 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="{% static 'css/login.css/' %}">
-    <title>chillchant</title>
-
-</head>
-<body>
-    <div class="wrapper">
-        <form action="" method='post'>
+{% extends 'base-login-register.html' %}
+{% block form-content %}
             <h1>Login</h1>
            
             
           
             {% for field in form  %}
             <div class="input-box">
+                {{field.errors}}
                 {{field}}
             </div>
             
@@ -30,14 +19,8 @@
 
             
             <div class="register-link">
-                <p>Don't have an account? <a href="#">Register now</a></p>
+                <p>Don't have an account? <a href="{% url 'create user page' %}">Register now</a></p>
                 
             </div>
             {% csrf_token %}
-        </form>
-    </div>
-    <footer>
-        Image by <a href="https://www.freepik.com/free-photo/aesthetic-retro-vaporwave-landscape_13820067.htm#query=blue%20purple%20mountain&position=0&from_view=search&track=ais">Freepik</a>
-    </footer>
-</body>
-</html>
+{% endblock %}
